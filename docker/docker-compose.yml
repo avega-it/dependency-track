@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
 
   dtrack-apiserver:
-    image: 'dependencytrack/apiserver:4.4.2'
+    image: 'dependencytrack/apiserver:4.5.0'
     environment:
     # The Dependency-Track container can be configured using any of the
     # available configuration properties defined in:
@@ -91,7 +91,7 @@ services:
     restart: unless-stopped
 
   dtrack-frontend:
-    image: 'dependencytrack/frontend:4.4.0'
+    image: 'dependencytrack/frontend:4.5.1'
     depends_on:
       - dtrack-apiserver
     environment:
