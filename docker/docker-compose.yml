@@ -88,7 +88,7 @@ services:
       #
       # Database Properties
       - ALPINE_DATABASE_MODE=external
-      - ALPINE_DATABASE_URL=jdbc:postgresql://dtrack-db:5432/dtracknpm
+      - ALPINE_DATABASE_URL=jdbc:postgresql://dtrack-npm-db:5432/dtracknpm
       - ALPINE_DATABASE_DRIVER=org.postgresql.Driver
       - ALPINE_DATABASE_USERNAME=dtracknpm
       - ALPINE_DATABASE_PASSWORD=dtracknpm
