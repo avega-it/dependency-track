@@ -10,7 +10,7 @@ volumes:
 
 services:
   nginx-reverse-proxy:
-    image: 'nginx:1.25.3'
+    image: 'nginx:1.27.3'
     depends_on:
       - dtrack-frontend
       - dtrack-apiserver
@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
 
   dtrack-apiserver:
-    image: 'dependencytrack/apiserver:4.10.1'
+    image: 'dependencytrack/apiserver:4.12.3'
     environment:
     # The Dependency-Track container can be configured using any of the
     # available configuration properties defined in:
@@ -57,7 +57,7 @@ services:
     restart: unless-stopped
 
   dtrack-frontend:
-    image: 'dependencytrack/frontend:4.9.1'
+    image: 'dependencytrack/frontend:4.12.3'
     depends_on:
       - dtrack-apiserver
     environment:
@@ -79,7 +79,7 @@ services:
       - db:/var/lib/postgresql/data
 
   dtrack-npm-apiserver:
-    image: 'dependencytrack/apiserver:4.10.1'
+    image: 'dependencytrack/apiserver:4.12.3'
     environment:
       # The Dependency-Track container can be configured using any of the
       # available configuration properties defined in:
@@ -112,7 +112,7 @@ services:
     restart: unless-stopped
 
   dtrack-npm-frontend:
-    image: 'dependencytrack/frontend:4.9.1'
+    image: 'dependencytrack/frontend:4.12.3'
     depends_on:
       - dtrack-npm-apiserver
     environment:
