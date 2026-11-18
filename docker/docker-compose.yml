@@ -50,6 +50,9 @@ services:
      - ALPINE_CORS_EXPOSE_HEADERS=Origin, Content-Type, Authorization, X-Requested-With, Content-Length, Accept, Origin, X-Api-Key, X-Total-Count
      - ALPINE_CORS_ALLOW_CREDENTIALS=true
      - ALPINE_CORS_MAX_AGE=3600
+     # JVM options appended to the image defaults (JAVA_OPTIONS).
+     # -XX:-UseBASE64Intrinsics mitigates CVE-2026-114938 (Java4Shell)
+     - EXTRA_JAVA_OPTIONS=-XX:-UseBASE64Intrinsics
     mem_reservation: '5g'
     mem_limit: '6g'
     volumes:
@@ -105,6 +108,9 @@ services:
       - ALPINE_CORS_EXPOSE_HEADERS=Origin, Content-Type, Authorization, X-Requested-With, Content-Length, Accept, Origin, X-Api-Key, X-Total-Count
       - ALPINE_CORS_ALLOW_CREDENTIALS=true
       - ALPINE_CORS_MAX_AGE=3600
+      # JVM options appended to the image defaults (JAVA_OPTIONS).
+      # -XX:-UseBASE64Intrinsics mitigates CVE-2026-114938 (Java4Shell)
+      - EXTRA_JAVA_OPTIONS=-XX:-UseBASE64Intrinsics
     mem_reservation: '5g'
     mem_limit: '6g'
     volumes:
